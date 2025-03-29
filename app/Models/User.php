@@ -10,8 +10,14 @@ use Illuminate\Database\Eloquent\Model;
         // column sa table
         protected $fillable = ['username', 'password','gender','jobid'];
 
-        public $timestamps = false;
+        //public $timestamps = false;
         //protected $primaryKey = 'id';
+
+        // Define relationship with UserJob
+        public function userJob()
+        {
+            return $this->belongsTo(UserJob::class, 'jobid', 'jobid');
+        }
 
         protected $hidden = ['password',];
  }
