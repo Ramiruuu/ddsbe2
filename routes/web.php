@@ -35,3 +35,6 @@ $router->group([], function () use ($router) {
     $router->patch('/users/{id}', 'UserController@update'); // Partial user update
     $router->delete('/users/{id}', 'UserController@delete'); // Delete user
 });
+
+$router->get('/userjob', 'UserJobController@index'); // Get all user jobs
+$router->get('/userjob/{id}', 'UserJobController@show');
